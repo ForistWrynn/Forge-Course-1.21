@@ -28,7 +28,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE.get());
                 output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
 
+                output.accept(ModItems.METAL_DETECTOR.get());
 
+
+                //just want this
                 output.accept(ModItems.URIEL_MOCHI.get());
                 output.accept(ModItems.LEVINA_MOCHI.get());
 

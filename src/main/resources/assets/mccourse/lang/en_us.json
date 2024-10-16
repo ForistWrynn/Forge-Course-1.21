@@ -3,6 +3,7 @@
 
   "item.mccourse.alexandrite": "Alexandrite",
   "item.mccourse.raw_alexandrite": "Raw Alexandrite",
+  "item.mccourse.metal_detector": "Metal Detector",
 
   "block.mccourse.alexandrite_block": "Block of Alexandrite",
   "block.mccourse.raw_alexandrite_block": "Block of Raw Alexandrite",
@@ -10,6 +11,8 @@
   "block.mccourse.deepslate_alexandrite_ore": "Deepslate Alexandrite Ore",
   "block.mccourse.end_stone_alexandrite_ore": "End Stone Alexandrite Ore",
   "block.mccourse.nether_alexandrite_ore": " Nether Alexandrite Ore",
+
+  "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 
   "item.mccourse.uriel_mochi": "Uriel Mochi",
   "item.mccourse.levina_mochi": "Levina Mochi"
