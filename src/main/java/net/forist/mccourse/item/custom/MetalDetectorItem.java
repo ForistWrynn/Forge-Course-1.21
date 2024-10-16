@@ -43,7 +43,7 @@ public class MetalDetectorItem extends Item {
             }
         }
 
-        //pContext.getItemInHand().hurtAndBreak(1,pContext.getPlayer(), player -> player.boardcastBreakEvent(player.getUsedItemHand()));
+        pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), player -> player.broadcastBreakEvent(player.getUsedItemHand()));
 
         return InteractionResult.SUCCESS;
     }
@@ -61,7 +61,4 @@ public class MetalDetectorItem extends Item {
         return blockState.is(Blocks.IRON_ORE) || blockState.is(Blocks.DEEPSLATE_IRON_ORE) || blockState.is(Blocks.DIAMOND_ORE) ;
     }
 
-    public int getUseDuration(ItemStack pStack, LivingEntity pEntity) {
-        return 72000;
-    }
 }
