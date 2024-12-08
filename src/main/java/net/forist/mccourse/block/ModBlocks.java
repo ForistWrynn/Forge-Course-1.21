@@ -2,6 +2,7 @@ package net.forist.mccourse.block;
 
 
 import net.forist.mccourse.MCCourseMod;
+import net.forist.mccourse.block.custom.SoundBlock;
 import net.forist.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -44,6 +45,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> NETHER_ALEXANDRITE_ORE =registerBlock("nether_alexandrite_ore",
             () -> new DropExperienceBlock(UniformInt.of(4,8),BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK)));
+
+    public static final RegistryObject<Block> SOUND_BLOCK =registerBlock("sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
