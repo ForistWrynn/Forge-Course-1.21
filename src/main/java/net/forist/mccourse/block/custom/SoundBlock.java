@@ -41,6 +41,6 @@ public class SoundBlock extends Block {
             }
         }
 
-        return super.useWithoutItem(pState, pLevel, pPos, pPlayer, pHitResult);
+        return super.useWithoutItem(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
     }
 }
