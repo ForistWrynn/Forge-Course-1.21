@@ -3,6 +3,9 @@
   "values":
   [
     "mccourse:alexandrite_ore",
+    "mccourse:deepslate_alexandrite_ore",
+    "mccourse:endstone_alexandrite_ore",
+    "mccourse:nether_alexandrite_ore",
     "minecraft:redstone_ore",
     "minecraft:diamond_ore",
     "minecraft:iron_ore",
