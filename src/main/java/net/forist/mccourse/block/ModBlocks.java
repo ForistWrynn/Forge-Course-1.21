@@ -47,7 +47,7 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(4,8),BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK)));
 
     public static final RegistryObject<Block> SOUND_BLOCK =registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+            () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noLootTable()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

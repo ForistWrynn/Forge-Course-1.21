@@ -18,6 +18,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> URIEL_MOCHI = ITEMS.register("uriel_mochi", () -> new Item(new Item.Properties().food(ModFoodProperties.URIELMOCHI)));
     public static final RegistryObject<Item> LEVINA_MOCHI = ITEMS.register("levina_mochi", () -> new Item(new Item.Properties().food(ModFoodProperties.LEVINAMOCHI)));
+    public static final RegistryObject<Item> HANNAH_MOCHI = ITEMS.register("hannah_mochi", () -> new Item(new Item.Properties().food(ModFoodProperties.HANNAHMOCHI)));
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
             () -> new MetalDetectorItem(new Item.Properties().durability(512)));

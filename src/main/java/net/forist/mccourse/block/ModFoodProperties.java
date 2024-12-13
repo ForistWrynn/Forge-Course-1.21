@@ -14,4 +14,7 @@ public class ModFoodProperties
 
     public static final FoodProperties LEVINAMOCHI = new FoodProperties.Builder().nutrition(4).saturationModifier(1f)
             .effect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 2), 1.0f).alwaysEdible().build();
+
+    public static final FoodProperties HANNAHMOCHI = new FoodProperties.Builder().nutrition(4).saturationModifier(1f)
+            .effect(new MobEffectInstance(MobEffects.LEVITATION, 100, 1), 1.0f).alwaysEdible().build();
 }

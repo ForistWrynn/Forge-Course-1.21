@@ -33,6 +33,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.ALEXANDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get()));
         this.add(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get(), 2, 6));
+        this.add(ModBlocks.NETHER_ALEXANDRITE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.NETHER_ALEXANDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get(), 2, 6));
+        this.add(ModBlocks.END_STONE_ALEXANDRITE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.END_STONE_ALEXANDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get(), 3, 7));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
