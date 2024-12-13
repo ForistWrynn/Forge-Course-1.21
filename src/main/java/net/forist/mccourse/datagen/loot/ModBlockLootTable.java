@@ -53,7 +53,7 @@ public class ModBlockLootTable extends BlockLootSubProvider {
                                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
-    @Override
+    //@Override
     protected Iterable<Block> getKnowBlocks()
     {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
