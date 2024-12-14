@@ -8,12 +8,11 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -48,6 +47,38 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOUND_BLOCK =registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noLootTable()));
+
+    public static final RegistryObject<StairBlock> ALEXANDRITE_STAIRS =registerBlock("alexandrite_stairs",
+            () -> new StairBlock(ModBlocks.ALEXANDRITE_BLOCK.get().defaultBlockState()
+                    , BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_STAIRS).sound(SoundType.METAL)));
+
+    public static final RegistryObject<SlabBlock> ALEXANDRITE_SLAB =registerBlock("alexandrite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB).sound(SoundType.METAL)));
+
+    public static final RegistryObject<PressurePlateBlock> ALEXANDRITE_PRESSURE_PLATE =registerBlock("alexandrite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<ButtonBlock> ALEXANDRITE_BUTTON =registerBlock("alexandrite_button",
+            () -> new ButtonBlock(BlockSetType.IRON,1
+                    , BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noCollission()));
+
+    public static final RegistryObject<FenceBlock> ALEXANDRITE_FENCE =registerBlock("alexandrite_fence",
+            () -> new FenceBlock( BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<FenceGateBlock> ALEXANDRITE_FENCE_GATE =registerBlock("alexandrite_fence_gate",
+            () -> new FenceGateBlock(WoodType.ACACIA,BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<WallBlock> ALEXANDRITE_WALL =registerBlock("alexandrite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<DoorBlock> ALEXANDRITE_DOOR =registerBlock("alexandrite_door",
+            () -> new DoorBlock(BlockSetType.IRON
+                    ,BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final RegistryObject<TrapDoorBlock> ALEXANDRITE_TRAPDOOR =registerBlock("alexandrite_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.IRON
+                    ,BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
