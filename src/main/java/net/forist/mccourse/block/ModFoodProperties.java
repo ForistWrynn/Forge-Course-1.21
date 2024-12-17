@@ -17,4 +17,11 @@ public class ModFoodProperties
 
     public static final FoodProperties HANNAHMOCHI = new FoodProperties.Builder().nutrition(4).saturationModifier(1f)
             .effect(new MobEffectInstance(MobEffects.LEVITATION, 100, 1), 1.0f).alwaysEdible().build();
+
+    public static final FoodProperties TAYUETCOOKIE = new FoodProperties.Builder().nutrition(10).saturationModifier(10f)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400,3), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION, 400 ,2), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 400, 4), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.BLINDNESS, 400,2),1.0f)
+            .alwaysEdible().build();
 }

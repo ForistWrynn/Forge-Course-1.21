@@ -51,6 +51,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.URIEL_MOCHI.get());
                 output.accept(ModItems.LEVINA_MOCHI.get());
                 output.accept(ModItems.HANNAH_MOCHI.get());
+                output.accept(ModItems.TA_YUET.get());
 
             }).build());
 

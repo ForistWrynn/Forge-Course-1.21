@@ -27,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.URIEL_MOCHI.get());
         basicItem(ModItems.LEVINA_MOCHI.get());
         basicItem(ModItems.HANNAH_MOCHI.get());
+        basicItem(ModItems.TA_YUET.get());
 
         basicItem(ModItems.METAL_DETECTOR.get());
         basicItem(ModItems.KOHLRABI.get());
