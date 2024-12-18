@@ -29,6 +29,10 @@ public class ModTags {
     {
         public static final TagKey<net.minecraft.world.level.block.Block> METAL_DETECTOR_VALUABLES = createTag("metal_detector_valuables");
 
+        //Alexandrite Tools
+        public static final TagKey<net.minecraft.world.level.block.Block> NEEDS_ALEXANDRITE_TOOL = createTag("needs_alexandrite_tool");
+        public static final TagKey<net.minecraft.world.level.block.Block> INCORRECT_FOR_ALEXANDRITE_TOOL = createTag("incorrect_for_alexandrite_tool");
+        public static final TagKey<net.minecraft.world.level.block.Block> PAXEL_MINEABLE = createTag("mineable/paxel");
 
         private static TagKey<net.minecraft.world.level.block.Block> createTag(String name)
         {

@@ -6,6 +6,8 @@ import net.forist.mccourse.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -65,6 +67,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
 
         tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
+
+        tag(ModTags.Block.NEEDS_ALEXANDRITE_TOOL)
+                .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
+                .add(Blocks.OBSIDIAN)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        tag(ModTags.Block.PAXEL_MINEABLE)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
+
+        tag(ModTags.Block.INCORRECT_FOR_ALEXANDRITE_TOOL)
+                .addTag(BlockTags.NEEDS_IRON_TOOL)
+                .remove(ModTags.Block.NEEDS_ALEXANDRITE_TOOL);
     }
 
 }

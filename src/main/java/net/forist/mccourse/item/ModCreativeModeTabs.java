@@ -46,6 +46,21 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.KOHLRABI.get());
                 output.accept(ModItems.PEAT_BRICK.get());
 
+                //Tools
+                output.accept(ModItems.ALEXANDRITE_SWORD.get());
+                output.accept(ModItems.ALEXANDRITE_SHOVEL.get());
+                output.accept(ModItems.ALEXANDRITE_PICKAXE.get());
+                output.accept(ModItems.ALEXANDRITE_AXE.get());
+                output.accept(ModItems.ALEXANDRITE_HOE.get());
+
+                output.accept(ModItems.ALEXANDRITE_PAXEL.get());
+                output.accept(ModItems.ALEXANDRITE_HAMMER.get());
+
+                //Armor
+                output.accept(ModItems.ALEXANDRITE_HELMET.get());
+                output.accept(ModItems.ALEXANDRITE_CHESTPLATE.get());
+                output.accept(ModItems.ALEXANDRITE_LEGGINGS.get());
+                output.accept(ModItems.ALEXANDRITE_BOOTS.get());
 
                 //just want this
                 output.accept(ModItems.URIEL_MOCHI.get());
