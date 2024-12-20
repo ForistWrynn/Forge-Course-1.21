@@ -67,10 +67,6 @@ public class MetalDetectorItem extends Item {
             }
         }
 
-        //pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), player -> player.broadcastBreakEvent(player.getUsedItemHand()));
-        //pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), entity -> entity.onEquippedItemBroken(entity.getUsedItemHand()));
-
-
         return InteractionResult.SUCCESS;
     }
 

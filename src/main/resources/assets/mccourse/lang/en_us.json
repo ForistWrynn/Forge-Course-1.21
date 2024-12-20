@@ -4,6 +4,7 @@
   "item.mccourse.alexandrite": "Alexandrite",
   "item.mccourse.raw_alexandrite": "Raw Alexandrite",
   "item.mccourse.metal_detector": "Metal Detector",
+  "item.mccourse.chisel": "Chisel",
   "item.mccourse.kohlrabi": "Kohlrabi",
   "item.mccourse.peat_brick": "Peat Brick",
 
@@ -20,6 +21,10 @@
   "item.mccourse.alexandrite_chestplate": "Alexandrite Body",
   "item.mccourse.alexandrite_leggings": "Alexandrite Leggings",
   "item.mccourse.alexandrite_boots": "Alexandrite Boots",
+
+  "enchantment.mccourse.lightning_striker": "Lightning Striker",
+
+  "item.mccourse.alexandrite_horse_armor": "Alexandrite Horse Armor",
 
   "block.mccourse.alexandrite_block": "Block of Alexandrite",
   "block.mccourse.raw_alexandrite_block": "Block of Raw Alexandrite",
@@ -42,6 +47,7 @@
   "block.mccourse.alexandrite_trapdoor": "Alexandrite Trap Door",
 
   "block.mccourse.sound_block": "Sound Block",
+  "block.mccourse.alexandrite_lamp": "Alexandrite Lamp",
 
   "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 

@@ -38,6 +38,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.ALEXANDRITE_WALL.get());
 
+        dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
+
         this.add(ModBlocks.ALEXANDRITE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ALEXANDRITE_SLAB.get()));
 

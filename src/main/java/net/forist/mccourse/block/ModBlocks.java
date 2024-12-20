@@ -2,6 +2,7 @@ package net.forist.mccourse.block;
 
 
 import net.forist.mccourse.MCCourseMod;
+import net.forist.mccourse.block.custom.AlexandriteLampBlock;
 import net.forist.mccourse.block.custom.SoundBlock;
 import net.forist.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -45,8 +46,16 @@ public class ModBlocks {
     public static final RegistryObject<Block> NETHER_ALEXANDRITE_ORE =registerBlock("nether_alexandrite_ore",
             () -> new DropExperienceBlock(UniformInt.of(4,8),BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK)));
 
+    //Special Block
+
     public static final RegistryObject<Block> SOUND_BLOCK =registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noLootTable()));
+
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
+            () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED)? 15:0)));
+
+    //Advanced Block , Stair , Slab etc.
 
     public static final RegistryObject<StairBlock> ALEXANDRITE_STAIRS =registerBlock("alexandrite_stairs",
             () -> new StairBlock(ModBlocks.ALEXANDRITE_BLOCK.get().defaultBlockState()

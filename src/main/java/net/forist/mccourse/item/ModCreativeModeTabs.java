@@ -39,9 +39,15 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
                 output.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE.get());
                 output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
+
+                //Advanced Block
                 output.accept(ModBlocks.SOUND_BLOCK.get());
+                output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
+
+                //Additional
 
                 output.accept(ModItems.METAL_DETECTOR.get());
+                output.accept(ModItems.CHISEL.get());
 
                 output.accept(ModItems.KOHLRABI.get());
                 output.accept(ModItems.PEAT_BRICK.get());
@@ -61,6 +67,9 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.ALEXANDRITE_CHESTPLATE.get());
                 output.accept(ModItems.ALEXANDRITE_LEGGINGS.get());
                 output.accept(ModItems.ALEXANDRITE_BOOTS.get());
+
+                //Animal Armor
+                output.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
                 //just want this
                 output.accept(ModItems.URIEL_MOCHI.get());

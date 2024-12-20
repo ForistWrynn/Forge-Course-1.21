@@ -2,10 +2,13 @@ package net.forist.mccourse.datagen;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.block.custom.AlexandriteLampBlock;
 import net.forist.mccourse.util.ModTags;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -58,6 +61,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.ALEXANDRITE_FENCE);
         blockItem(ModBlocks.ALEXANDRITE_FENCE_GATE);
         blockItem(ModBlocks.ALEXANDRITE_WALL);
+
+        customLamp();
+    }
+
+    private void customLamp() {
+        getVariantBuilder(ModBlocks.ALEXANDRITE_LAMP.get()).forAllStates(state -> {
+            if(state.getValue(AlexandriteLampBlock.CLICKED)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_on",
+                        ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "block/" + "alexandrite_lamp_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_off",
+                        ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "block/" + "alexandrite_lamp_off")))};
+            }
+        });
+        simpleBlockItem(ModBlocks.ALEXANDRITE_LAMP.get(), models().cubeAll("alexandrite_lamp_on",
+                ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "block/" + "alexandrite_lamp_on")));
     }
 
     private void blockItem(RegistryObject<? extends Block> blockRegistryObject)

@@ -2,8 +2,11 @@ package net.forist.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.component.ModDataComponentTypes;
+import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
+import net.forist.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,6 +39,7 @@ public class MCCourseMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModDataComponentTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -45,6 +49,9 @@ public class MCCourseMod
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        // Register the enchantment
+        ModEnchantmentEffect.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -84,7 +91,7 @@ public class MCCourseMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

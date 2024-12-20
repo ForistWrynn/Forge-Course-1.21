@@ -56,6 +56,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.HANNAH_MOCHI.get());
         basicItem(ModItems.TA_YUET.get());
 
+        //basicItem(ModItems.CHISEL.get()); //Got new json
+
         basicItem(ModItems.KOHLRABI.get());
         basicItem(ModItems.PEAT_BRICK.get());
 
@@ -79,6 +81,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.ALEXANDRITE_CHESTPLATE);
         trimmedArmorItem(ModItems.ALEXANDRITE_LEGGINGS);
         trimmedArmorItem(ModItems.ALEXANDRITE_BOOTS);
+
+        basicItem(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
     }
 
