@@ -9,6 +9,7 @@ import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -56,7 +57,10 @@ public class MCCourseMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() ->{
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI.get(),0.35f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI_SEEDS.get(),0.20f);
+        } );
     }
 
     // Add the example block item to the building blocks tab

@@ -77,6 +77,9 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.HANNAH_MOCHI.get());
                 output.accept(ModItems.TA_YUET.get());
 
+                //Seeds
+                output.accept(ModItems.KOHLRABI_SEEDS.get());
+
             }).build());
 
     public static void register(IEventBus eventBus){

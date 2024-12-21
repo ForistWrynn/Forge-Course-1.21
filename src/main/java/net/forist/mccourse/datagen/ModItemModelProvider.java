@@ -84,6 +84,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
+        //Seeds
+        basicItem(ModItems.KOHLRABI_SEEDS.get());
+
+
     }
 
     // Shoutout to El_Redstoniano for making this

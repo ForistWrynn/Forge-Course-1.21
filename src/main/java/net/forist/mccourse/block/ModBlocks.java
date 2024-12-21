@@ -3,6 +3,7 @@ package net.forist.mccourse.block;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.custom.AlexandriteLampBlock;
+import net.forist.mccourse.block.custom.KohlrabiCropBlock;
 import net.forist.mccourse.block.custom.SoundBlock;
 import net.forist.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -88,6 +89,10 @@ public class ModBlocks {
     public static final RegistryObject<TrapDoorBlock> ALEXANDRITE_TRAPDOOR =registerBlock("alexandrite_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.IRON
                     ,BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
+    //Crop
+    public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop",
+            () -> new KohlrabiCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT).noOcclusion().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
