@@ -7,6 +7,9 @@
   "item.mccourse.chisel": "Chisel",
   "item.mccourse.kohlrabi": "Kohlrabi",
   "item.mccourse.kohlrabi_seeds": "Kohlrabi Seeds",
+  "block.mccourse.snapdragon": "Snapdragon Flower",
+  "item.mccourse.potted_snapdragon": "Potted Snapdragon Flower",
+
   "item.mccourse.peat_brick": "Peat Brick",
 
   "item.mccourse.alexandrite_sword": "Alexandrite Sword",
@@ -49,6 +52,7 @@
 
   "block.mccourse.sound_block": "Sound Block",
   "block.mccourse.alexandrite_lamp": "Alexandrite Lamp",
+  "block.mccourse.gem_empowering_station": "Gem Empowering Station",
 
   "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 
@@ -57,7 +61,12 @@
   "item.mccourse.hannah_mochi": "Hannah Mochi",
   "item.mccourse.ta_yuet": "Tayuet Cookie",
 
+  "item.mccourse.bar_brawl_record": "Bar Brawl Record",
+  "item.mccourse.bar_brawl_record.desc": "Bryan Tech - Bar Brawl (CC0)",
+
   "tooltip.mccourse.metal_detector.tooltip.shift": "Right Click on Block to find valuables!",
   "tooltip.mccourse.metal_detector.tooltip": "Press §eShift§r for more Information",
-  "tooltip.mccourse.sound_block": "Plays nice sounds when right-clicking and walking"
+  "tooltip.mccourse.sound_block": "Plays nice sounds when right-clicking and walking",
+
+  "sound.mccourse.metal_detector_found_ore": "Metal Detector found something"
 }

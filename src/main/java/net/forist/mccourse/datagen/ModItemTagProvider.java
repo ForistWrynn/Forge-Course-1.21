@@ -25,14 +25,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider)
     {
         //add Tags here
-
-
-
         tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.ALEXANDRITE_HELMET.get())
                 .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
                 .add(ModItems.ALEXANDRITE_LEGGINGS.get())
                 .add(ModItems.ALEXANDRITE_BOOTS.get());
+
+        tag(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+                .add(ModItems.BAR_BRAWL_RECORD.get());
     }
 
     @Override

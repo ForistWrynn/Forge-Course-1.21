@@ -77,8 +77,11 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.HANNAH_MOCHI.get());
                 output.accept(ModItems.TA_YUET.get());
 
-                //Seeds
+                //Seeds & Plant
                 output.accept(ModItems.KOHLRABI_SEEDS.get());
+                output.accept(ModBlocks.SNAPDRAGON.get());
+
+                output.accept(ModItems.BAR_BRAWL_RECORD.get());
 
             }).build());
 

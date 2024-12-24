@@ -3,6 +3,7 @@ package net.forist.mccourse.datagen;
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
 import net.forist.mccourse.item.ModItems;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.client.tutorial.Tutorial;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -86,6 +87,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //Seeds
         basicItem(ModItems.KOHLRABI_SEEDS.get());
+        simpleBlockItem(ModBlocks.SNAPDRAGON);
+
+        basicItem(ModItems.BAR_BRAWL_RECORD.get());
 
 
     }
@@ -135,6 +139,12 @@ public class ModItemModelProvider extends ItemModelProvider {
             });
         }
     }
+
+    private ItemModelBuilder complexBlock(Block block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(MCCourseMod.MOD_ID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
+    }
+
 
     private ItemModelBuilder handHeldItem(RegistryObject<Item> item)
     {

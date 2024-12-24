@@ -69,6 +69,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customLamp();
 
         makeCrop(((CropBlock) ModBlocks.KOHLRABI_CROP.get()), "kohlrabi_stage", "kohlrabi_stage");
+
+
+        simpleBlock(ModBlocks.SNAPDRAGON.get(),
+                models().cross(blockTexture(ModBlocks.SNAPDRAGON.get()).getPath(),blockTexture(ModBlocks.SNAPDRAGON.get())).renderType("cutout"));
+
+        horizontalBlock(ModBlocks.GEM_EMPOWERING_STATION.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_empowering_staion")));
+
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

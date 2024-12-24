@@ -1,6 +1,7 @@
 package net.forist.mccourse.item.custom;
 
 import com.mojang.datafixers.util.Pair;
+import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModTags;
 import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.screens.Screen;
@@ -46,6 +47,10 @@ public class MetalDetectorItem extends Item {
                 if (isValuableBlock(blockState)) {
                     outputValuableCoordinates(positionClicked.below(i), player, blockState.getBlock());
                     foundBlock = true;
+
+                    //Play Sounds onFound
+                    pContext.getLevel().playSound(null,player.getX(),player.getY(),player.getZ(),
+                            ModSounds.METAL_DETECTOR_FOUND_ORE.get(),SoundSource.BLOCKS, 1f,1f);
 
                     break;
                 }

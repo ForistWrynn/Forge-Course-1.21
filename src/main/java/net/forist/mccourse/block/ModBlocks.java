@@ -3,11 +3,14 @@ package net.forist.mccourse.block;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.custom.AlexandriteLampBlock;
+import net.forist.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.forist.mccourse.block.custom.KohlrabiCropBlock;
 import net.forist.mccourse.block.custom.SoundBlock;
 import net.forist.mccourse.item.ModItems;
+import net.forist.mccourse.sound.ModSounds;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -54,7 +57,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
             () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
-                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED)? 15:0)));
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED)? 15:0).sound(ModSounds.ALEXANDRITE_LAMP_SOUNDS)));
 
     //Advanced Block , Stair , Slab etc.
 
@@ -93,6 +96,18 @@ public class ModBlocks {
     //Crop
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop",
             () -> new KohlrabiCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    //Flower
+    public static final RegistryObject<Block> SNAPDRAGON = registerBlock("snapdragon",
+            () -> new FlowerBlock(MobEffects.BLINDNESS,6,BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
+
+    public static final RegistryObject<Block> POTTED_SNAPDRAGON = BLOCKS.register("potted_snapdragon",
+            () -> new FlowerPotBlock((()->(FlowerPotBlock) Blocks.FLOWER_POT), SNAPDRAGON,BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    //Custom Block
+    public static final RegistryObject<Block> GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
+            () -> new GemEmpoweringStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

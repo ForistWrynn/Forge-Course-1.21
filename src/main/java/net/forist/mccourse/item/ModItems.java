@@ -3,6 +3,7 @@ package net.forist.mccourse.item;
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
 import net.forist.mccourse.item.custom.*;
+import net.forist.mccourse.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -100,6 +101,10 @@ public class ModItems {
     //Seed
     public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds",
             () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
+
+    //Music Disc
+    public static final RegistryObject<Item> BAR_BRAWL_RECORD = ITEMS.register("bar_brawl_record",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.BAR_BRAWL_KEY).stacksTo(1)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

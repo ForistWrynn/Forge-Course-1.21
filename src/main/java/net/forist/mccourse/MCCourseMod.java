@@ -6,10 +6,13 @@ import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
+import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -41,6 +44,7 @@ public class MCCourseMod
         ModBlocks.register(modEventBus);
 
         ModDataComponentTypes.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -60,6 +64,9 @@ public class MCCourseMod
         event.enqueueWork(() ->{
             ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI.get(),0.35f);
             ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI_SEEDS.get(),0.20f);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SNAPDRAGON.getId(),ModBlocks.POTTED_SNAPDRAGON);
+
         } );
     }
 
