@@ -74,6 +74,12 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.ALEXANDRITE,7,-3.5f)).durability(256)));
 
+    public static final RegistryObject<Item> ALEXANDRITE_BOW = ITEMS.register("alexandrite_bow",
+            () -> new BowItem(new Item.Properties().durability(500)));
+
+    public static final RegistryObject<Item> ALEXANDRITE_SHIELD = ITEMS.register("alexandrite_shield",
+            () -> new ShieldItem(new Item.Properties().durability(500)));
+
     // Armor
 
     public static final RegistryObject<Item> ALEXANDRITE_HELMET = ITEMS.register("alexandrite_helmet",
