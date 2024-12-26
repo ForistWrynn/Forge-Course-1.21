@@ -44,10 +44,13 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.SOUND_BLOCK.get());
                 output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
 
-                //Additional
+                //Complex Block
+                output.accept(ModBlocks.GEM_EMPOWERING_STATION.get());
 
+                //Additional
                 output.accept(ModItems.METAL_DETECTOR.get());
                 output.accept(ModItems.CHISEL.get());
+                output.accept(ModItems.RADIATION_STAFF.get());
 
                 output.accept(ModItems.KOHLRABI.get());
                 output.accept(ModItems.PEAT_BRICK.get());

@@ -106,6 +106,11 @@ public class ModItems {
     public static final RegistryObject<Item> BAR_BRAWL_RECORD = ITEMS.register("bar_brawl_record",
             () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.BAR_BRAWL_KEY).stacksTo(1)));
 
+    //3D Item Model
+    public static final RegistryObject<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
+            () -> new Item(new Item.Properties().durability(1024)));
+
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

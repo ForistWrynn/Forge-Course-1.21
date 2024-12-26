@@ -91,6 +91,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.BAR_BRAWL_RECORD.get());
 
+        complexBlock(ModBlocks.GEM_EMPOWERING_STATION.get());
+
 
     }
 
@@ -141,7 +143,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder complexBlock(Block block) {
-        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(MCCourseMod.MOD_ID,
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(),
+                 ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,
                 "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 

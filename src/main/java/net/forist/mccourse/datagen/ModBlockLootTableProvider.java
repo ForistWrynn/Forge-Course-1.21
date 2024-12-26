@@ -47,6 +47,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
 
+        dropSelf(ModBlocks.GEM_EMPOWERING_STATION.get());
+
         this.add(ModBlocks.ALEXANDRITE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ALEXANDRITE_SLAB.get()));
 

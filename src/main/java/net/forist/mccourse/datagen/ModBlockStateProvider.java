@@ -75,7 +75,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cross(blockTexture(ModBlocks.SNAPDRAGON.get()).getPath(),blockTexture(ModBlocks.SNAPDRAGON.get())).renderType("cutout"));
 
         horizontalBlock(ModBlocks.GEM_EMPOWERING_STATION.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/gem_empowering_staion")));
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_empowering_station")));
 
     }
 
