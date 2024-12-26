@@ -6,6 +6,7 @@ import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
+import net.forist.mccourse.loot.ModLootModifiers;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
@@ -45,6 +46,9 @@ public class MCCourseMod
 
         ModDataComponentTypes.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        //Lootable Modifier
+        ModLootModifiers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
