@@ -1,21 +1,30 @@
 package net.forist.mccourse.event;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.command.ReturnHomeCommand;
 import net.forist.mccourse.command.SetHomeCommand;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.item.custom.HammerItem;
 import net.forist.mccourse.potion.ModPotions;
+import net.forist.mccourse.villager.ModVillagers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.brewing.BrewingRecipeRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,6 +36,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.server.command.ConfigCommand;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = MCCourseMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -67,6 +77,75 @@ public class ModEvent
         PotionBrewing.Builder builder = event.getBuilder();
 
         builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION.getHolder().get());
+    }
+
+    @SubscribeEvent
+    public static void addCustomTrades(VillagerTradesEvent event)
+    {
+        if (event.getType() == VillagerProfession.FARMER)
+        {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(ModItems.KOHLRABI.get(), 3),
+                    new ItemStack(Items.EMERALD, 4),6,3,0.025f
+            ));
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 3),
+                    new ItemStack(ModItems.KOHLRABI_SEEDS.get(), 2),4,2,0.025f
+            ));
+        }
+
+        if (event.getType() == VillagerProfession.TOOLSMITH)
+        {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 32),
+                    new ItemStack(ModItems.METAL_DETECTOR.get(), 1),1,10,0.025f
+            ));
+        }
+
+        if (event.getType() == ModVillagers.KAUPENGER.get())
+        {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(ModItems.URIEL_MOCHI.get(), 4),10,8,0.025f
+            ));
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(ModItems.LEVINA_MOCHI.get(), 4),10,8,0.025f
+            ));
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 2),
+                    new ItemStack(ModItems.TA_YUET.get(), 2),10,8,0.025f
+            ));
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(ModItems.ALEXANDRITE.get(), 2),
+                    new ItemStack(ModItems.HANNAH_MOCHI.get(), 1),10,8,0.025f
+            ));
+        }
+
+    }
+
+    @SubscribeEvent
+    public static void addWanderingTrades(WandererTradesEvent event)
+    {
+        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 6),
+                new ItemStack(ModItems.RADIATION_STAFF.get(), 1),1,10,0.02f));
+
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 10),
+                new ItemStack(ModItems.BAR_BRAWL_RECORD.get(), 1),1,10,0.02f));
     }
 
     @SubscribeEvent

@@ -11,6 +11,7 @@ import net.forist.mccourse.painting.ModPaintings;
 import net.forist.mccourse.potion.ModPotions;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
+import net.forist.mccourse.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -57,6 +58,8 @@ public class MCCourseMod
         //Custom Effect
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
