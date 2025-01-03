@@ -6,10 +6,9 @@ import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
-import net.forist.mccourse.loot.ModLootModifiers;
+import net.forist.mccourse.painting.ModPaintings;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -47,8 +46,11 @@ public class MCCourseMod
         ModDataComponentTypes.register(modEventBus);
         ModSounds.register(modEventBus);
 
-        //Lootable Modifier
-        ModLootModifiers.register(modEventBus);
+        //Lootable Modifier fixing
+        //ModLootModifiers.register(modEventBus);
+
+        //Painting
+        ModPaintings.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
