@@ -5,11 +5,15 @@ import net.forist.mccourse.command.ReturnHomeCommand;
 import net.forist.mccourse.command.SetHomeCommand;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.item.custom.HammerItem;
+import net.forist.mccourse.potion.ModPotions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.brewing.BrewingRecipeRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -55,6 +59,14 @@ public class ModEvent
                 HARVESTED_BLOCKS.remove(pos);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onBrewingRecipeRegister(BrewingRecipeRegisterEvent event)
+    {
+        PotionBrewing.Builder builder = event.getBuilder();
+
+        builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION.getHolder().get());
     }
 
     @SubscribeEvent

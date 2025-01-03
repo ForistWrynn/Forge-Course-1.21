@@ -3,10 +3,12 @@ package net.forist.mccourse;
 import com.mojang.logging.LogUtils;
 import net.forist.mccourse.block.ModBlocks;
 import net.forist.mccourse.component.ModDataComponentTypes;
+import net.forist.mccourse.effect.ModEffects;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.painting.ModPaintings;
+import net.forist.mccourse.potion.ModPotions;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -51,6 +53,10 @@ public class MCCourseMod
 
         //Painting
         ModPaintings.register(modEventBus);
+
+        //Custom Effect
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
