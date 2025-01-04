@@ -2,6 +2,7 @@ package net.forist.mccourse.item;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.fluid.ModFluids;
 import net.forist.mccourse.painting.ModPaintings;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -69,6 +70,8 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.ALEXANDRITE_BOW.get());
 
                 output.accept(ModItems.ALEXANDRITE_SHIELD.get());
+
+                output.accept(ModFluids.AZURITE_WATER_BUCKET.get());
 
                 //Armor
                 output.accept(ModItems.ALEXANDRITE_HELMET.get());

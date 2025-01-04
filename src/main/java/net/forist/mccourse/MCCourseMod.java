@@ -5,6 +5,8 @@ import net.forist.mccourse.block.ModBlocks;
 import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.effect.ModEffects;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
+import net.forist.mccourse.fluid.ModFluidTypes;
+import net.forist.mccourse.fluid.ModFluids;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.painting.ModPaintings;
@@ -13,6 +15,8 @@ import net.forist.mccourse.potion.ModPotions;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
 import net.forist.mccourse.villager.ModVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -63,6 +67,9 @@ public class MCCourseMod
         ModVillagers.register(modEventBus);
 
         ModParticle.register(modEventBus);
+
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -121,6 +128,10 @@ public class MCCourseMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             ModItemProperties.addCustomItemProperties();
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_AZURITE_WATER.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_AZURITE_WATER.get(), RenderType.translucent());
+            });
         }
     }
 }

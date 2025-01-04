@@ -2,6 +2,7 @@ package net.forist.mccourse.datagen;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.fluid.ModFluids;
 import net.forist.mccourse.item.ModItems;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.client.tutorial.Tutorial;
@@ -84,6 +85,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.ALEXANDRITE_BOOTS);
 
         basicItem(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
+
+        basicItem(ModFluids.AZURITE_WATER_BUCKET.get());
 
         //Seeds
         basicItem(ModItems.KOHLRABI_SEEDS.get());
