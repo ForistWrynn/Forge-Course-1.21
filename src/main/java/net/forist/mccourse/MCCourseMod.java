@@ -8,6 +8,7 @@ import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.item.ModCreativeModeTabs;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.painting.ModPaintings;
+import net.forist.mccourse.particle.ModParticle;
 import net.forist.mccourse.potion.ModPotions;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
@@ -60,6 +61,8 @@ public class MCCourseMod
         ModPotions.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+
+        ModParticle.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

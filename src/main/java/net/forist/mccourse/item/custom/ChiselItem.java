@@ -3,6 +3,7 @@ package net.forist.mccourse.item.custom;
 import net.forist.mccourse.block.ModBlocks;
 import net.forist.mccourse.component.ModDataComponentTypes;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -55,6 +56,12 @@ public class ChiselItem extends Item
                 level.playSound(null, pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
 
                 pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(),pContext.getClickedPos());
+
+                //Particle on click
+                ((ServerLevel) pContext.getLevel()).sendParticles(ParticleTypes.SMOKE,pContext.getClickedPos().getX()+0.5f,
+                        pContext.getClickedPos().getY()+1.0f,pContext.getClickedPos().getZ()+0.5f,25,0.0,0.05,
+                        0.0,2.5f);
+
             }
         }
 
