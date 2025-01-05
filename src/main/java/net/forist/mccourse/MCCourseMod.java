@@ -2,6 +2,8 @@ package net.forist.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.block.entitiy.ModBlockEntitiies;
+import net.forist.mccourse.block.entitiy.renderer.PedestalBlockEntityRenderer;
 import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.effect.ModEffects;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
@@ -22,6 +24,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -70,6 +73,8 @@ public class MCCourseMod
 
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        ModBlockEntitiies.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -132,6 +137,12 @@ public class MCCourseMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_AZURITE_WATER.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_AZURITE_WATER.get(), RenderType.translucent());
             });
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event)
+        {
+            event.registerBlockEntityRenderer(ModBlockEntitiies.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
         }
     }
 }

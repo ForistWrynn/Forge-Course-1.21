@@ -48,6 +48,7 @@ public class ModCreativeModeTabs {
 
                 //Complex Block
                 output.accept(ModBlocks.GEM_EMPOWERING_STATION.get());
+                output.accept(ModBlocks.PEDESTAL.get());
 
                 //Additional
                 output.accept(ModItems.METAL_DETECTOR.get());

@@ -2,10 +2,7 @@ package net.forist.mccourse.block;
 
 
 import net.forist.mccourse.MCCourseMod;
-import net.forist.mccourse.block.custom.AlexandriteLampBlock;
-import net.forist.mccourse.block.custom.GemEmpoweringStationBlock;
-import net.forist.mccourse.block.custom.KohlrabiCropBlock;
-import net.forist.mccourse.block.custom.SoundBlock;
+import net.forist.mccourse.block.custom.*;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.sound.ModSounds;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -107,6 +104,9 @@ public class ModBlocks {
     //Custom Block
     public static final RegistryObject<Block> GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
             () -> new GemEmpoweringStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> PEDESTAL =registerBlock("pedestal",
+            () -> new PedestalBlock(BlockBehaviour.Properties.of().strength(5.0F, 6.0F).noOcclusion()));
 
 
 
