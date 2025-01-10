@@ -14,9 +14,12 @@ import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.painting.ModPaintings;
 import net.forist.mccourse.particle.ModParticle;
 import net.forist.mccourse.potion.ModPotions;
+import net.forist.mccourse.screen.ModMenuTypes;
+import net.forist.mccourse.screen.custom.pedestal.PedestalScreen;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
 import net.forist.mccourse.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -75,6 +78,7 @@ public class MCCourseMod
         ModFluids.register(modEventBus);
 
         ModBlockEntitiies.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -137,6 +141,8 @@ public class MCCourseMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_AZURITE_WATER.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_AZURITE_WATER.get(), RenderType.translucent());
             });
+
+            MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
         }
 
         @SubscribeEvent
