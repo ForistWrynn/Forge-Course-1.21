@@ -1,6 +1,7 @@
 package net.forist.mccourse.screen;
 
 import net.forist.mccourse.MCCourseMod;
+import net.forist.mccourse.screen.custom.crystallizer.CrystallizerMenu;
 import net.forist.mccourse.screen.custom.pedestal.PedestalMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -20,6 +21,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<PedestalMenu>> PEDESTAL_MENU =
             registerMenuType("pedestal_menu",PedestalMenu::new);
+    public static final RegistryObject<MenuType<CrystallizerMenu>> CRYSTALLIZER_MENU =
+            registerMenuType("crystallizer_menu", CrystallizerMenu::new);
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name,
                                                                                                  IContainerFactory<T> factory){

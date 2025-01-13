@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 public class PedestalBlockEntity extends BlockEntity implements Container, MenuProvider
 {
 
-    private final ItemStackHandler inventory = new ItemStackHandler(0){
+    private final ItemStackHandler inventory = new ItemStackHandler(1){
         @Override
         protected int getStackLimit(int slot, @NotNull ItemStack stack) {
             return 1;

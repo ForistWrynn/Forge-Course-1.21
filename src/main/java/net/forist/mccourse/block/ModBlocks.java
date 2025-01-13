@@ -108,6 +108,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEDESTAL =registerBlock("pedestal",
             () -> new PedestalBlock(BlockBehaviour.Properties.of().strength(5.0F, 6.0F).noOcclusion()));
 
+    public static final RegistryObject<Block> CRYSTALLIZER =registerBlock("crystallizer",
+            () -> new CrystallizerBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

@@ -2,6 +2,7 @@ package net.forist.mccourse.block.entitiy;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.block.entitiy.custom.CrystallizerBlockEntity;
 import net.forist.mccourse.block.entitiy.custom.GemEmpoweringStationBlockEntity;
 import net.forist.mccourse.block.entitiy.custom.PedestalBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -23,6 +24,11 @@ public class ModBlockEntitiies {
             BLOCK_ENTITIES.register("pedestal_block_entity", () ->
                     BlockEntityType.Builder.of(PedestalBlockEntity::new,
                             ModBlocks.PEDESTAL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CrystallizerBlockEntity>> CRYTALLIZER_BE =
+            BLOCK_ENTITIES.register("crytallizer_be", () ->
+                    BlockEntityType.Builder.of(CrystallizerBlockEntity::new,
+                            ModBlocks.CRYSTALLIZER.get()).build(null));
 
     public static void register(IEventBus eventBus)
     {

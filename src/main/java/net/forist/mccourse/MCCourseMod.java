@@ -15,6 +15,7 @@ import net.forist.mccourse.painting.ModPaintings;
 import net.forist.mccourse.particle.ModParticle;
 import net.forist.mccourse.potion.ModPotions;
 import net.forist.mccourse.screen.ModMenuTypes;
+import net.forist.mccourse.screen.custom.crystallizer.CrystallizerScreen;
 import net.forist.mccourse.screen.custom.pedestal.PedestalScreen;
 import net.forist.mccourse.sound.ModSounds;
 import net.forist.mccourse.util.ModItemProperties;
@@ -143,6 +144,7 @@ public class MCCourseMod
             });
 
             MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
         }
 
         @SubscribeEvent
