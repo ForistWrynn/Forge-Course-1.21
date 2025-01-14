@@ -1,0 +1,10 @@
+{
+  "type": "mccourse:crystallizing",
+  "ingredient": {
+    "item": "mccourse:raw_alexandrite"
+  },
+  "result": {
+    "id": "mccourse:alexandrite",
+    "count": 1
+  }
+}

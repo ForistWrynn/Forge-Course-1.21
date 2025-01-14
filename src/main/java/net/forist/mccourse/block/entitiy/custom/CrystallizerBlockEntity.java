@@ -3,6 +3,9 @@ package net.forist.mccourse.block.entitiy.custom;
 import net.forist.mccourse.block.custom.CrystallizerBlock;
 import net.forist.mccourse.block.entitiy.ModBlockEntitiies;
 import net.forist.mccourse.item.ModItems;
+import net.forist.mccourse.recipe.CrystallizerRecipe;
+import net.forist.mccourse.recipe.CrystallizerRecipeInput;
+import net.forist.mccourse.recipe.ModRecipes;
 import net.forist.mccourse.screen.custom.crystallizer.CrystallizerMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,6 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -31,6 +35,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
@@ -144,8 +150,11 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         progress = 0;
         maxProgress = DEFAULT_MAX_PROGRESS;
     }
-    private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.ALEXANDRITE.get());
+    private void craftItem()
+    {
+        Optional<RecipeHolder<CrystallizerRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
+
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -161,23 +170,45 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
     private boolean hasRecipe() {
+        /*
         ItemStack input = new ItemStack(ModItems.RAW_ALEXANDRITE.get());
         ItemStack output = new ItemStack(ModItems.ALEXANDRITE.get());
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
-                itemHandler.getStackInSlot(INPUT_SLOT).getItem() == input.getItem();
+         */
+        Optional<RecipeHolder<CrystallizerRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty())
+        {
+            return false;
+        }
+
+        ItemStack output = recipe.get().value().getResultItem(null);
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
+
+    private Optional<RecipeHolder<CrystallizerRecipe>> getCurrentRecipe()
+    {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.CRYSTALLIZER_TYPE.get(),new CrystallizerRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
+    }
+
+
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
         return itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
     }
+    
+    
     private boolean canInsertAmountIntoOutputSlot(int count) {
         int maxCount = itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
         int currentCount = itemHandler.getStackInSlot(OUTPUT_SLOT).getCount();
         return maxCount >= currentCount + count;
     }
+    
+    
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
         return saveWithoutMetadata(pRegistries);
     }
+    
+    
     @Nullable
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {

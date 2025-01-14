@@ -14,6 +14,7 @@ import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.painting.ModPaintings;
 import net.forist.mccourse.particle.ModParticle;
 import net.forist.mccourse.potion.ModPotions;
+import net.forist.mccourse.recipe.ModRecipes;
 import net.forist.mccourse.screen.ModMenuTypes;
 import net.forist.mccourse.screen.custom.crystallizer.CrystallizerScreen;
 import net.forist.mccourse.screen.custom.pedestal.PedestalScreen;
@@ -80,6 +81,8 @@ public class MCCourseMod
 
         ModBlockEntitiies.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
