@@ -1,5 +1,6 @@
 package net.forist.mccourse.block.entitiy.custom;
 
+import net.forist.mccourse.block.custom.CrystallizerBlock;
 import net.forist.mccourse.block.entitiy.ModBlockEntitiies;
 import net.forist.mccourse.item.ModItems;
 import net.forist.mccourse.screen.custom.crystallizer.CrystallizerMenu;
@@ -127,12 +128,15 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     public void tick(Level level, BlockPos pPos, BlockState pState) {
         if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
+            level.setBlockAndUpdate(pPos,pState.setValue(CrystallizerBlock.LIT, true));
             setChanged(level, pPos, pState);
+
             if(hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
             }
         } else {
+            level.setBlockAndUpdate(pPos,pState.setValue(CrystallizerBlock.LIT, false));
             resetProgress();
         }
     }

@@ -77,7 +77,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlock(ModBlocks.GEM_EMPOWERING_STATION.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_empowering_station")));
 
-        blockWithItem(ModBlocks.CRYSTALLIZER);
+        //blockWithItem(ModBlocks.CRYSTALLIZER);
+//        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), models().orientable("mccourse:crystallizer",
+//                mcLoc("block/blast_furnace_side"),
+//                modLoc("block/crystallizer_front"),
+//                modLoc("block/crystallizer_top")));
+//
+
+        blockItem(ModBlocks.CRYSTALLIZER);
 
     }
 

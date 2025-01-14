@@ -109,7 +109,7 @@ public class ModBlocks {
             () -> new PedestalBlock(BlockBehaviour.Properties.of().strength(5.0F, 6.0F).noOcclusion()));
 
     public static final RegistryObject<Block> CRYSTALLIZER =registerBlock("crystallizer",
-            () -> new CrystallizerBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+            () -> new CrystallizerBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().randomTicks()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
