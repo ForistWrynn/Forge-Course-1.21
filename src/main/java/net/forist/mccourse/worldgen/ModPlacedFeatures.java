@@ -20,9 +20,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> BALSA_PLACED_KEY = registerKey("balsa_placed");
 
-    public static void bootstrap(BootstrapContext<PlacedFeature> context)
-    {
-        HolderGetter<ConfiguredFeature<?,?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, BALSA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BALSA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),

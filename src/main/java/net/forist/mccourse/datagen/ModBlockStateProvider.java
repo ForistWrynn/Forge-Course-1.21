@@ -80,9 +80,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.CRYSTALLIZER);
 
         logBlock(((RotatedPillarBlock) ModBlocks.BALSA_LOG.get()));
-        axisBlock((RotatedPillarBlock)ModBlocks.BALSA_WOOD.get(), blockTexture(ModBlocks.BALSA_LOG.get()), blockTexture(ModBlocks.BALSA_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.BALSA_WOOD.get()),
+                blockTexture(ModBlocks.BALSA_LOG.get()), blockTexture(ModBlocks.BALSA_LOG.get()));
+
         logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BALSA_LOG.get()));
-        axisBlock((RotatedPillarBlock)ModBlocks.STRIPPED_BALSA_WOOD.get(), blockTexture(ModBlocks.STRIPPED_BALSA_LOG.get()), blockTexture(ModBlocks.STRIPPED_BALSA_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BALSA_WOOD.get()),
+                blockTexture(ModBlocks.STRIPPED_BALSA_LOG.get()), blockTexture(ModBlocks.STRIPPED_BALSA_LOG.get()));
 
         blockItem(ModBlocks.BALSA_LOG);
         blockItem(ModBlocks.BALSA_WOOD);
@@ -90,12 +93,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_BALSA_WOOD);
 
         blockWithItem(ModBlocks.BALSA_PLANKS);
-
         leavesBlock(ModBlocks.BALSA_LEAVES);
+
         saplingBlock(ModBlocks.BALSA_SAPLING);
-
     }
-
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),

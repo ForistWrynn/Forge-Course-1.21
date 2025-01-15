@@ -17,8 +17,7 @@ public class ModBiomeModifiers
 {
     public static final ResourceKey<BiomeModifier> ADD_TREE_BALSA = registerKey("add_tree_balsa");
 
-    public static void bootstrap(BootstrapContext<BiomeModifier> context)
-    {
+    public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
@@ -26,6 +25,7 @@ public class ModBiomeModifiers
                 HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BALSA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

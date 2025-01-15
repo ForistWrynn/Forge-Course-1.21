@@ -1,19 +1,19 @@
-[15Jan2025 13:55:19.623] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\PC\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mccourse, --all, --output, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\generated\resources, --existing, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\main\resources]
-[15Jan2025 13:55:19.625] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.4+7-LTS
-[15Jan2025 13:55:19.626] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.4 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[15Jan2025 13:55:19.709] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[15Jan2025 13:55:19.790] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/PC/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
-[15Jan2025 13:55:20.516] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[15Jan2025 13:55:21.063] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\PC\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mccourse, --all, --output, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\generated\resources, --existing, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\main\resources]
-[15Jan2025 13:55:24.968] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 51.0.33, for MC 1.21 with MCP 20240613.102039
-[15Jan2025 13:55:24.969] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v51.0.33 Initialized
-[15Jan2025 13:55:25.000] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[15Jan2025 13:55:25.156] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[15Jan2025 13:55:25.159] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.785 ms
-[15Jan2025 13:55:25.562] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mccourse]
-[15Jan2025 13:55:25.618] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/PC/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.07.28-1.21/forge-1.21-51.0.33_mapped_parchment_2024.07.28-1.21.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[15Jan2025 13:55:25.618] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/PC/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.07.28-1.21/forge-1.21-51.0.33_mapped_parchment_2024.07.28-1.21.jar%230!/data/.mcassetsroot' uses unexpected schema
-[15Jan2025 13:55:25.708] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/]: Exception caught during firing event: Duplicate provider: Registries
+[15Jan2025 17:05:36.014] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\PC\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mccourse, --all, --output, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\generated\resources, --existing, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\main\resources]
+[15Jan2025 17:05:36.015] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.4+7-LTS
+[15Jan2025 17:05:36.017] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.4 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[15Jan2025 17:05:36.104] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[15Jan2025 17:05:36.180] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/PC/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[15Jan2025 17:05:36.872] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[15Jan2025 17:05:37.369] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\PC\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mccourse, --all, --output, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\generated\resources, --existing, D:\IDE_Project\Java\Course_MinecraftModding\forge-1.21-51.0.33-mdk\src\main\resources]
+[15Jan2025 17:05:40.967] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 51.0.33, for MC 1.21 with MCP 20240613.102039
+[15Jan2025 17:05:40.967] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v51.0.33 Initialized
+[15Jan2025 17:05:40.993] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[15Jan2025 17:05:41.138] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[15Jan2025 17:05:41.141] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.038 ms
+[15Jan2025 17:05:41.492] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mccourse]
+[15Jan2025 17:05:41.537] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/PC/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.07.28-1.21/forge-1.21-51.0.33_mapped_parchment_2024.07.28-1.21.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[15Jan2025 17:05:41.538] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/PC/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.07.28-1.21/forge-1.21-51.0.33_mapped_parchment_2024.07.28-1.21.jar%230!/data/.mcassetsroot' uses unexpected schema
+[15Jan2025 17:05:41.622] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/]: Exception caught during firing event: Duplicate provider: Registries
 	Index: 1
 	Listeners:
 		0: NORMAL
@@ -48,7 +48,7 @@ java.lang.IllegalStateException: Duplicate provider: Registries
 	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53)
 	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19)
 
-[15Jan2025 13:55:25.709] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Caught exception during event net.minecraftforge.data.event.GatherDataEvent@2eedd575 dispatch for modid mccourse
+[15Jan2025 17:05:41.623] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Caught exception during event net.minecraftforge.data.event.GatherDataEvent@212d8133 dispatch for modid mccourse
 java.lang.IllegalStateException: Duplicate provider: Registries
 	at TRANSFORMER/minecraft@1.21/net.minecraft.data.DataGenerator.addProvider(DataGenerator.java:82) ~[forge-1.21-51.0.33_mapped_parchment_2024.07.28-1.21.jar%230!/:?]
 	at TRANSFORMER/mccourse@0.20-1.21/net.forist.mccourse.datagen.DataGenerators.gatherData(DataGenerators.java:46) ~[main/:?]
