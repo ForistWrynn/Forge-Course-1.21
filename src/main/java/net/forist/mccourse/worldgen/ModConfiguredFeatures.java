@@ -23,11 +23,14 @@ public class ModConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?,?>> BALSA_KEY = registerKey("balsa");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+
+
         register(context, BALSA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BALSA_LOG.get()),
                 new ForkingTrunkPlacer(4, 4, 3),
                 BlockStateProvider.simple(ModBlocks.BALSA_LEAVES.get()),
-                new CherryFoliagePlacer(ConstantInt.of(6), ConstantInt.of(3), ConstantInt.of(7),
+                new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(3), ConstantInt.of(5),
                         0.2f, 0.5f, 0.2f, 0.5f),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 

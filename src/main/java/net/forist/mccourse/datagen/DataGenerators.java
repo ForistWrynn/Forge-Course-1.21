@@ -2,6 +2,8 @@ package net.forist.mccourse.datagen;
 
 import net.forist.mccourse.MCCourseMod;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -41,9 +43,12 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
 
+        // Commend one of these below and generate separatly
+        //generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+        /**/
+
 
         //Still fixing - Modify Vanilla Loot table
         //generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(packOutput, MCCourseMod.MOD_ID, lookupProvider));
