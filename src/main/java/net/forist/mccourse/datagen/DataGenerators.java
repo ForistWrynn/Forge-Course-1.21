@@ -43,6 +43,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
 
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+
         //Still fixing - Modify Vanilla Loot table
         //generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(packOutput, MCCourseMod.MOD_ID, lookupProvider));
     }
