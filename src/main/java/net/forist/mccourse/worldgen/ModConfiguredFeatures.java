@@ -4,6 +4,7 @@ import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -11,13 +12,12 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
@@ -34,14 +34,16 @@ public class ModConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?,?>> NETHER_ALEXANDRITE_ORE_KEY = registerKey("nether_alexandrite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> END_ALEXANDRITE_ORE_KEY = registerKey("end_alexandrite_ore");
 
+    public static final ResourceKey<ConfiguredFeature<?,?>> SNAPDRAGON_KEY = registerKey("snapdragon");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         register(context, BALSA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BALSA_LOG.get()),
-                new ForkingTrunkPlacer(4, 4, 3),
+                new StraightTrunkPlacer(4, 4, 3),
                 BlockStateProvider.simple(ModBlocks.BALSA_LEAVES.get()),
-                new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(3), ConstantInt.of(5),
-                        0.2f, 0.5f, 0.2f, 0.5f),
+                new CherryFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(4),
+                        0.25f, 0.16666667f, 0.33333334f, 0.5f),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -58,6 +60,10 @@ public class ModConfiguredFeatures
                 ModBlocks.NETHER_ALEXANDRITE_ORE.get().defaultBlockState(), 9));
         register(context, END_ALEXANDRITE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
                 ModBlocks.END_STONE_ALEXANDRITE_ORE.get().defaultBlockState(), 9));
+
+        register(context, SNAPDRAGON_KEY, Feature.FLOWER,
+                new RandomPatchConfiguration(32,6,2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SNAPDRAGON.get())))));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
