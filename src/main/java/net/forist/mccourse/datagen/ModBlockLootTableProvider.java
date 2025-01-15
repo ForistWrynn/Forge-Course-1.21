@@ -78,6 +78,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.POTTED_SNAPDRAGON.get(),
                 createPotFlowerItemTable(ModBlocks.POTTED_SNAPDRAGON.get()));
 
+        this.dropSelf(ModBlocks.BALSA_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_BALSA_LOG.get());
+        this.dropSelf(ModBlocks.BALSA_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_BALSA_WOOD.get());
+
+        this.dropSelf(ModBlocks.BALSA_PLANKS.get());
+        this.dropSelf(ModBlocks.BALSA_SAPLING.get());
+
+        this.add(ModBlocks.BALSA_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.BALSA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
     }
 

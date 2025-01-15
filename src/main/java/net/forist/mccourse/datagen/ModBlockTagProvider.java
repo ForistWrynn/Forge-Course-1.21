@@ -23,7 +23,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.ALEXANDRITE_ORE.get())
                 .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
@@ -44,7 +44,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get())
                 .add(ModBlocks.ALEXANDRITE_WALL.get());
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.ALEXANDRITE_ORE.get())
@@ -52,35 +52,42 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXANDRITE_STAIRS.get())
                 .add(ModBlocks.ALEXANDRITE_SLAB.get());
 
-        tag(BlockTags.NEEDS_DIAMOND_TOOL)
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get())
                 .add(ModBlocks.END_STONE_ALEXANDRITE_ORE.get())
                 .add(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
 
-        tag(ModTags.Block.METAL_DETECTOR_VALUABLES)
-                .add(ModBlocks.ALEXANDRITE_ORE.get()).addTag(Tags.Blocks.ORES);
+        this.tag(ModTags.Block.METAL_DETECTOR_VALUABLES)
+                .add(ModBlocks.ALEXANDRITE_ORE.get())
+                .addTag(Tags.Blocks.ORES);
 
-        tag(BlockTags.FENCES)
+        this.tag(BlockTags.FENCES)
                 .add(ModBlocks.ALEXANDRITE_FENCE.get());
 
-        tag(BlockTags.FENCE_GATES)
+        this.tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
 
-        tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
+        this.tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
 
-        tag(ModTags.Block.NEEDS_ALEXANDRITE_TOOL)
+        this.tag(ModTags.Block.NEEDS_ALEXANDRITE_TOOL)
                 .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
                 .add(Blocks.OBSIDIAN)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
 
-        tag(ModTags.Block.PAXEL_MINEABLE)
+        this.tag(ModTags.Block.PAXEL_MINEABLE)
                 .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
 
-        tag(ModTags.Block.INCORRECT_FOR_ALEXANDRITE_TOOL)
+        this.tag(ModTags.Block.INCORRECT_FOR_ALEXANDRITE_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL)
                 .remove(ModTags.Block.NEEDS_ALEXANDRITE_TOOL);
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BALSA_LOG.get())
+                .add(ModBlocks.BALSA_WOOD.get())
+                .add(ModBlocks.STRIPPED_BALSA_LOG.get())
+                .add(ModBlocks.STRIPPED_BALSA_WOOD.get());
     }
 
 }

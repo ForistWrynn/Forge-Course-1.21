@@ -96,6 +96,17 @@ public class ModCreativeModeTabs {
 
                 output.accept(ModItems.BAR_BRAWL_RECORD.get());
 
+                //WOODS AND PLANKS
+                output.accept(ModBlocks.BALSA_LOG.get());
+                output.accept(ModBlocks.BALSA_WOOD.get());
+                output.accept(ModBlocks.STRIPPED_BALSA_LOG.get());
+                output.accept(ModBlocks.STRIPPED_BALSA_WOOD.get());
+
+                output.accept(ModBlocks.BALSA_PLANKS.get());
+                output.accept(ModBlocks.BALSA_LEAVES.get());
+
+                output.accept(ModBlocks.BALSA_SAPLING.get());
+
             }).build());
 
     public static void register(IEventBus eventBus){

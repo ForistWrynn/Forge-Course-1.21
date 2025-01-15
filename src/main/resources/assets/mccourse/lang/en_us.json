@@ -84,6 +84,14 @@
 
   "entity.minecraft.villager.mccourse.kaupenger": "Kaupenger",
 
+  "block.mccourse.balsa_log": "Balsa Log",
+  "block.mccourse.balsa_planks": "Balsa Planks",
+  "block.mccourse.balsa_wood": "Balsa Wood",
+  "block.mccourse.stripped_balsa_log": "Stripped Balsa Log",
+  "block.mccourse.stripped_balsa_wood": "Stripped Balsa Wood",
+  "block.mccourse.balsa_leaves": "Balsa Leaves",
+  "block.mccourse.balsa_sapling": "Balsa Sapling",
+
   "item.mccourse.uriel_mochi": "Uriel Mochi",
   "item.mccourse.levina_mochi": "Levina Mochi",
   "item.mccourse.hannah_mochi": "Hannah Mochi",
