@@ -24,6 +24,8 @@ public class ModBiomeModifiers
 
     public static final ResourceKey<BiomeModifier> ADD_SNAPDRAGON = registerKey("add_snapdragon");
 
+    public static final ResourceKey<BiomeModifier> ADD_ALEXANDRITE_GEODE = registerKey("add_alexandrite_geode");
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -55,6 +57,12 @@ public class ModBiomeModifiers
                 HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.CHERRY_GROVE)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SNAPDRAGON_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_ALEXANDRITE_GEODE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ALEXANDRITE_GEODE_PLACED_KEY)),
+                GenerationStep.Decoration.LOCAL_MODIFICATIONS
         ));
     }
 

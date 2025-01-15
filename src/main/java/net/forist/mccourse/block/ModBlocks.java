@@ -164,7 +164,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> BALSA_SAPLING =registerBlock("balsa_sapling",
-            () -> new SaplingBlock(ModTreeGrowers.BALSA,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new ModSaplingBlock(ModTreeGrowers.BALSA,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), Blocks.END_STONE));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

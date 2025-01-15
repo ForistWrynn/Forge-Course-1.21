@@ -9,7 +9,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.GeodeBlockSettings;
+import net.minecraft.world.level.levelgen.GeodeCrackSettings;
+import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
@@ -36,6 +40,8 @@ public class ModConfiguredFeatures
 
     public static final ResourceKey<ConfiguredFeature<?,?>> SNAPDRAGON_KEY = registerKey("snapdragon");
 
+    public static final ResourceKey<ConfiguredFeature<?,?>> ALEXANDRITE_GEODE_KEY = registerKey("alexandrite_geode");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         register(context, BALSA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -44,7 +50,8 @@ public class ModConfiguredFeatures
                 BlockStateProvider.simple(ModBlocks.BALSA_LEAVES.get()),
                 new CherryFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(4),
                         0.25f, 0.16666667f, 0.33333334f, 0.5f),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new TwoLayersFeatureSize(1, 0, 2))//.dirt(BlockStateProvider.simple(Blocks.END_STONE))
+                .build());
 
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -64,6 +71,20 @@ public class ModConfiguredFeatures
         register(context, SNAPDRAGON_KEY, Feature.FLOWER,
                 new RandomPatchConfiguration(32,6,2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SNAPDRAGON.get())))));
+
+        register(context, ALEXANDRITE_GEODE_KEY, Feature.GEODE,
+                new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(Blocks.DEEPSLATE),
+                        BlockStateProvider.simple(ModBlocks.ALEXANDRITE_ORE.get()),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        BlockStateProvider.simple(Blocks.EMERALD_BLOCK),
+                        List.of(ModBlocks.ALEXANDRITE_BLOCK.get().defaultBlockState()),
+                        BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+                        new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
+                        new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
+                        true, UniformInt.of(3, 8),
+                        UniformInt.of(2, 6), UniformInt.of(1, 2),
+                        -18, 18, 0.075D, 1));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
