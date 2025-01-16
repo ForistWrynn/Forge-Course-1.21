@@ -59,6 +59,8 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.KOHLRABI.get());
                 output.accept(ModItems.PEAT_BRICK.get());
 
+                output.accept(ModItems.CAPYBARA_SPAWN_EGG.get());
+
                 //Tools
                 output.accept(ModItems.ALEXANDRITE_SWORD.get());
                 output.accept(ModItems.ALEXANDRITE_SHOVEL.get());

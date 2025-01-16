@@ -2,9 +2,11 @@ package net.forist.mccourse.item;
 
 import net.forist.mccourse.MCCourseMod;
 import net.forist.mccourse.block.ModBlocks;
+import net.forist.mccourse.entity.ModEntities;
 import net.forist.mccourse.item.custom.*;
 import net.forist.mccourse.sound.ModSounds;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -115,6 +117,11 @@ public class ModItems {
     //3D Item Model
     public static final RegistryObject<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
             () -> new Item(new Item.Properties().durability(1024)));
+
+    //Entity
+    public static final RegistryObject<Item> CAPYBARA_SPAWN_EGG = ITEMS.register("capybara_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CAPYBARA,0x664216,0xdeab1f,
+                    new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){

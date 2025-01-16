@@ -7,6 +7,8 @@ import net.forist.mccourse.block.entitiy.renderer.PedestalBlockEntityRenderer;
 import net.forist.mccourse.component.ModDataComponentTypes;
 import net.forist.mccourse.effect.ModEffects;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
+import net.forist.mccourse.entity.ModEntities;
+import net.forist.mccourse.entity.client.CapybaraRenderer;
 import net.forist.mccourse.fluid.ModFluidTypes;
 import net.forist.mccourse.fluid.ModFluids;
 import net.forist.mccourse.item.ModCreativeModeTabs;
@@ -24,6 +26,7 @@ import net.forist.mccourse.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -83,6 +86,8 @@ public class MCCourseMod
         ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -148,6 +153,8 @@ public class MCCourseMod
 
             MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
             MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
+
+            EntityRenderers.register(ModEntities.CAPYBARA.get(), CapybaraRenderer::new);
         }
 
         @SubscribeEvent

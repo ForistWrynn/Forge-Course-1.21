@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = MCCourseMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModClientBusEvents
 {
+
+
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event)
     {

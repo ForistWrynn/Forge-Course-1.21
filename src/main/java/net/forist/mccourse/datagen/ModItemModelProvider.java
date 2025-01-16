@@ -97,6 +97,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         complexBlock(ModBlocks.GEM_EMPOWERING_STATION.get());
 
         saplingItem(ModBlocks.BALSA_SAPLING);
+
+        withExistingParent(ModItems.CAPYBARA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
