@@ -8,4 +8,7 @@ public class ModModelLayers
 {
     public static final ModelLayerLocation CAPYBARA = new ModelLayerLocation(ResourceLocation
             .fromNamespaceAndPath(MCCourseMod.MOD_ID,"capybara"), "main");
+
+    public static final ModelLayerLocation GIRAFFE = new ModelLayerLocation(ResourceLocation
+            .fromNamespaceAndPath(MCCourseMod.MOD_ID,"giraffe"), "main");
 }

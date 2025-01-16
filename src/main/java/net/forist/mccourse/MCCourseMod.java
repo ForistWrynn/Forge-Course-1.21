@@ -9,6 +9,7 @@ import net.forist.mccourse.effect.ModEffects;
 import net.forist.mccourse.enchantment.ModEnchantmentEffect;
 import net.forist.mccourse.entity.ModEntities;
 import net.forist.mccourse.entity.client.CapybaraRenderer;
+import net.forist.mccourse.entity.client.GiraffeRenderer;
 import net.forist.mccourse.fluid.ModFluidTypes;
 import net.forist.mccourse.fluid.ModFluids;
 import net.forist.mccourse.item.ModCreativeModeTabs;
@@ -155,6 +156,7 @@ public class MCCourseMod
             MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
 
             EntityRenderers.register(ModEntities.CAPYBARA.get(), CapybaraRenderer::new);
+            EntityRenderers.register(ModEntities.GIRAFFE.get(), GiraffeRenderer::new);
         }
 
         @SubscribeEvent

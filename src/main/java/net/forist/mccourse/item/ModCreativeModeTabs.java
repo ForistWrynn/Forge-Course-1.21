@@ -60,6 +60,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.PEAT_BRICK.get());
 
                 output.accept(ModItems.CAPYBARA_SPAWN_EGG.get());
+                output.accept(ModItems.GIRAFFE_SPAWN_EGG.get());
 
                 //Tools
                 output.accept(ModItems.ALEXANDRITE_SWORD.get());

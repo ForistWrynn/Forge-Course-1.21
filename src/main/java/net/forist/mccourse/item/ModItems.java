@@ -123,6 +123,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.CAPYBARA,0x664216,0xdeab1f,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> GIRAFFE_SPAWN_EGG = ITEMS.register("giraffe_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GIRAFFE,0xe7d7a5,0x7e5b41,
+                    new Item.Properties()));
+
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
